@@ -1,24 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { View } from "react-native";
 import Login from "./src/Pages/Login";
+import Main from "./src/Pages/Main";
+import * as eva from "@eva-design/eva";
+import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
+import Product from "./src/Pages/Product";
+import Checkout from "./src/Pages/Checkout";
 
 export default function App() {
   return (
-    <View className="items-center ">
-      <View className=" mt-14 flex flex-col w-[90%] py-3 top-[60%] justify-between bg-slate-200 rounded-md">
-        <Text className="mx-5 text-xl">Enter Username</Text>
-        <TextInput className="p-2 my-2 border-2 border-green-600 w-[85%] ml-5 rounded-md">
-          Name
-        </TextInput>
-
-        <Text className="mx-5 text-xl">Enter Email</Text>
-        <TextInput className="p-2 my-2 border-2 border-green-600 w-[85%] ml-5 rounded-md">
-          Email
-        </TextInput>
-
-        <Button title="Submit" />
-      </View>
-    </View>
+    <>
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <View>
+          {/* <Login /> */}
+          {/* <Main /> */}
+          {/* <Product /> */}
+          <Checkout />
+        </View>
+      </ApplicationProvider>
+    </>
   );
 }
 
